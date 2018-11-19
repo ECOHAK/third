@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app.views import index, list
+from app.views import index, list, edit, save
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index),
     path('list/', list),
-}
+    path('edit/<int:id>', edit),
+    path('save/<int:id>', save),
+]
